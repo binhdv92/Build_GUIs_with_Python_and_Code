@@ -3,8 +3,8 @@
 # Introduction
 
 # This example have tested on the following version of components
-Gtk 3.26.1
-Glade 2.22.1
+- Gtk 3.26.1
+- Glade 2.22.1
 
 # Note
 1. There is an issue with Glade 3.22.1 that the "GtkStatusbar" do not show on "Containers"
