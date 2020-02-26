@@ -3,6 +3,7 @@
 # Introduction
 
 # This example have tested on the following version of components
+- Python 3.6.9
 - Gtk 3.26.1
 - Glade 2.22.1
 
