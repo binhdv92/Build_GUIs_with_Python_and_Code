@@ -17,7 +17,7 @@ class WindowMain:
 
         # Display main window
         self.windowMain=self.builder.get_object("window_main")
-        self.windowMain.show()
+        self.windowMain.show_all()
 
         # Get list of files in image directory
         img_dir="img"
