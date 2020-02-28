@@ -2,14 +2,15 @@
 
 import gi
 gi.require_version('Gtk', '3.0')
-from gi.repository import GObject, Gtk
+from gi.repository import GObject, Gtk, GdkPixbuf
+
 
 import os
 import random
 
-class WindowMain:
+class WindowMain():
 
-    def __int__(self):
+    def __init__(self):
         # Get GUI Glade file
         self.builder=Gtk.Builder()
         self.builder.add_from_file("gui6.glade")
@@ -25,7 +26,7 @@ class WindowMain:
 
         # Display image
         self.imageMain=self.builder.get_object("image_main")
-        img_file="img/alpha1.jpg"
+        img_file="img/image01.jpg"
         self.imageMain.set_from_file(img_file)
         self.imageMain.show()
 
@@ -39,7 +40,7 @@ class WindowMain:
         self.statusBar.push(self.context_id, status_text)
 
         # Start timer
-        timer_interval = 3
+        timer_interval = 1
         GObject.timeout_add_seconds(timer_interval, self.on_handle_timer)
 
     def on_window_main_destroy(self, widget, data=None):
@@ -53,7 +54,10 @@ class WindowMain:
     def on_handle_timer(self):
         # Display image
         img_file= "img/" + random.choice(self.img_files)
-        self.imageMain.set_from_file(img_file)
+
+        self.pix = GdkPixbuf.Pixbuf.new_from_file_at_size(img_file,800,800)
+        self.imageMain.set_from_pixbuf(self.pix)
+        #self.imageMain.set_from_file(img_file)
         self.imageMain.show()
 
         # Update status bar
