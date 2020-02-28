@@ -13,7 +13,7 @@
 
 # Result
 - Affer run the gui6.py file then you will be expected see the gui as below
-[](./media/result.png)
+![Reuslt](./media/result.PNG)
 
 # Note
 1. There is an issue with Glade 3.22.1 that the "GtkStatusbar" do not show on "Containers"
